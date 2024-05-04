@@ -1,9 +1,11 @@
 import flet as ft
+from montecarlo import simulacion
 
 #DIMENSIONES 1300X900 PX
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
+    metricas = []
     # page.vertical_alignment = ft.MainAxisAlignment.CENTER
     # page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
@@ -16,6 +18,8 @@ def main(page: ft.Page):
         print("Tasa de clientes: ", clientesText.value)
         print("Tasa de servicios: ", serviciosText.value)
         print("Tiempo de ejecucion: ", tiempoEjecucionText.value)
+        metricas = simulacion(int(serviciosText.value), int(clientesText.value), int(serviciosText.value), int(tiempoEjecucionText.value), int(numSimulacionesText.value))
+        print(metricas)
 
     servidoresText = ft.TextField(
         label = "Numero de servidores",
@@ -34,7 +38,12 @@ def main(page: ft.Page):
     )
 
     tiempoEjecucionText = ft.TextField(
-        label = "Tiempo de ejecucion (horas)",
+        label = "Tiempo de ejecucion",
+        input_filter= ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
+    )
+
+    numSimulacionesText = ft.TextField(
+        label = "Numero de simulaciones",
         input_filter= ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
     )
 
@@ -56,6 +65,7 @@ def main(page: ft.Page):
             clientesText,
             serviciosText,
             tiempoEjecucionText,
+            numSimulacionesText,
             btnEjecutar,
             btnReiniciar
         ],

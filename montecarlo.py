@@ -1,6 +1,6 @@
 import numpy as np
 
-def simulate_queue(num_servers, arrival_rate, service_rate, sim_time, num_simulaciones):
+def simulacion(num_servers, arrival_rate, service_rate, sim_time, num_simulaciones):
     metricas = {'tiempo_espera_promedio': [], 'tiempo_sistema': [], 'utlizizacion_servidores': []}
 
     for _ in range(num_simulaciones):
@@ -54,8 +54,8 @@ sim_time = 100
 num_simulaciones = 1000
 
 # Simulate queue and calculate metricas
-metricas = simulate_queue(num_servers, arrival_rate, service_rate, sim_time, num_simulaciones)
+# metricas = simulacion(num_servers, arrival_rate, service_rate, sim_time, num_simulaciones)
 
-print("Average Wait Time:", metricas['tiempo_espera_promedio'])
-print("System Time:", metricas['tiempo_sistema'])
-print("Server Utilization:", metricas['utlizizacion_servidores'])
+# print("Average Wait Time:", metricas['tiempo_espera_promedio'])
+# print("System Time:", metricas['tiempo_sistema'])
+# print("Server Utilization:", metricas['utlizizacion_servidores'])

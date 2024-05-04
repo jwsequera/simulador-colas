@@ -1,0 +1,33 @@
+# Archivos generados por Python
+*.pyc
+__pycache__/
+
+# Entornos virtuales (recomendado no incluirlos en el control de versiones)
+venv/
+env/
+
+# Carpeta de archivos de caché
+.cache/
+
+# Carpeta de compilación
+*.pyc
+
+# Carpeta de archivos temporales
+*.tmp
+
+# Carpeta de archivos de registro
+*.log
+
+# Archivos de configuración locales
+*.ini
+
+# Carpeta de instalación de dependencias
+dist/
+build/
+
+# Carpeta de archivos generados por IDEs
+.idea/
+.vscode/
+
+# Otros archivos y carpetas generados localmente
+.DS_Store
