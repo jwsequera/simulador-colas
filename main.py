@@ -4,7 +4,7 @@ from montecarlo import simulacion
 #DIMENSIONES 1300X900 PX
 
 def main(page: ft.Page):
-    page.title = "Flet counter example"
+    page.title = "Montecarlo simulator"
     metricas = []
     # page.vertical_alignment = ft.MainAxisAlignment.CENTER
     # page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
@@ -39,7 +39,7 @@ def main(page: ft.Page):
         print("Tasa de clientes: ", clientesText.value)
         print("Tasa de servicios: ", serviciosText.value)
         print("Tiempo de ejecucion: ", tiempoEjecucionText.value)
-        metricas = simulacion(int(serviciosText.value), int(clientesText.value), int(serviciosText.value), int(tiempoEjecucionText.value), int(numSimulacionesText.value))
+        metricas = simulacion(int(servidoresText.value), float(clientesText.value), float(serviciosText.value), float(tiempoEjecucionText.value), int(numSimulacionesText.value))
         tiempo_espera_promedio_text.value = f"Tiempo de espera promedio: {round(metricas['tiempo_espera_promedio'], 2)}"
         tiempo_sistema.value = f"Tiempo de sistema: {round(metricas['tiempo_sistema'], 2)}"
         utilizacion_servidores.value = f"Utilizacion de servidores: {round(metricas['utlizizacion_servidores'],2) * 100}%"
@@ -61,7 +61,7 @@ def main(page: ft.Page):
 
     serviciosText = ft.TextField(
         label = "Tasa de servicios",
-        input_filter= ft.InputFilter(allow=True, regex_string=r"[0-9]", replacement_string=""),
+        input_filter= ft.InputFilter(allow=True, regex_string=r"[0-9\.,]", replacement_string=""),
     )
 
     tiempoEjecucionText = ft.TextField(
