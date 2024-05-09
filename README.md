@@ -23,7 +23,7 @@ Este proyecto implementa un simulador de sistema de colas con múltiples servido
 
 # Herramientas utilizadas
 
-# flet
-# numpy
+## flet
+## numpy
 
 ![alt text](image.png)
